@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFRIQNOVA Optimized</title>
+    <link rel="stylesheet" href="styles.min.css"> <!-- Minified CSS -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <script>
+      const firebaseConfig = {
+        // Your Firebase configuration
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+        });
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to AFRIQNOVA</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Images</h2>
+            <img src="image1.jpg" loading="lazy" alt="Description of image 1">
+            <img src="image2.jpg" loading="lazy" alt="Description of image 2">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 AFRIQNOVA. All rights reserved.</p>
+    </footer>
+    <script src="scripts.min.js" defer></script> <!-- Minified JS -->
+</body>
+</html>
